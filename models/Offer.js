@@ -9,6 +9,10 @@ const OfferSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Enter  company'],
   },
+  logo: {
+    type: String,
+    required: [true, 'Enter  logo'],
+  },
   location: {
     type: String,
     required: [true, 'Enter  location'],
@@ -17,7 +21,7 @@ const OfferSchema = new mongoose.Schema({
     type: [Number],
     required: [true, 'Enter salary'],
   },
-  Field: {
+  field: {
     type: String,
     required: [true, 'Enter field'],
   },
@@ -25,7 +29,7 @@ const OfferSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Enter  overview'],
   },
-  Responsibilities: {
+  responsibilities: {
     type: [String],
     required: [true, 'Enter responsibilities'],
   },
@@ -42,6 +46,10 @@ const OfferSchema = new mongoose.Schema({
     required: [true, 'Enter benefits'],
   },
   educationLevel: {
+    type: String,
+    required: [true, 'Enter education level'],
+  },
+  experienceLevel: {
     type: String,
     required: [true, 'Enter education level'],
   },
