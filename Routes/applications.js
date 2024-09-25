@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
   const application = new Applications({
     title: req.body.title,
     company: req.body.company,
+    logo: req.body.logo,
     location: req.body.location,
     salary: req.body.salary,
     field: req.body.field,
@@ -26,6 +27,7 @@ router.post('/', async (req, res) => {
     mustHaves: req.body.mustHaves,
     benefits: req.body.benefits,
     educationLevel: req.body.educationLevel,
+    experienceLevel: req.body.educationLevel,
     type: req.body.type,
     roleType: req.body.roleType,
   });

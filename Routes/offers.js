@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
   const offer = new Offers({
     title: req.body.title,
     company: req.body.company,
+    logo: req.body.logo,
     location: req.body.location,
     salary: req.body.salary,
     field: req.body.field,
@@ -57,6 +58,7 @@ router.put('/:id', async (req, res) => {
         $set: {
           title: req.body.title,
           company: req.body.company,
+          logo: req.body.logo,
           location: req.body.location,
           salary: req.body.salary,
           field: req.body.field,
@@ -66,6 +68,7 @@ router.put('/:id', async (req, res) => {
           mustHaves: req.body.mustHaves,
           benefits: req.body.benefits,
           educationLevel: req.body.educationLevel,
+          experienceLevel: req.body.educationLevel,
           type: req.body.type,
           roleType: req.body.roleType,
         },

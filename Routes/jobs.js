@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
   const job = new Jobs({
     title: req.body.title,
     company: req.body.company,
+    logo: req.body.logo,
     location: req.body.location,
     salary: req.body.salary,
     field: req.body.field,
@@ -26,6 +27,7 @@ router.post('/', async (req, res) => {
     mustHaves: req.body.mustHaves,
     benefits: req.body.benefits,
     educationLevel: req.body.educationLevel,
+    experienceLevel: req.body.educationLevel,
     type: req.body.type,
     roleType: req.body.roleType,
   });
@@ -33,7 +35,7 @@ router.post('/', async (req, res) => {
     const savedJob = await job.save();
     res.send({ sucess: true, data: savedJob });
   } catch (error) {
-    res.status(500).send({ success: false, message: 'something went wrong' });
+    res.status(500).send({ success: false, message: error });
   }
 });
 
@@ -56,6 +58,7 @@ router.put('/:id', async (req, res) => {
         $set: {
           title: req.body.title,
           company: req.body.company,
+          logo: req.body.logo,
           location: req.body.location,
           salary: req.body.salary,
           field: req.body.field,
