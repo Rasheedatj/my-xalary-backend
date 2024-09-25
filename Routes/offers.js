@@ -26,6 +26,7 @@ router.post('/', async (req, res) => {
     qualifications: req.body.qualifications,
     mustHaves: req.body.mustHaves,
     benefits: req.body.benefits,
+    experienceLevel: req.body.experienceLevel,
     educationLevel: req.body.educationLevel,
     type: req.body.type,
     roleType: req.body.roleType,
@@ -35,7 +36,7 @@ router.post('/', async (req, res) => {
     const savedOffer = await offer.save();
     res.send({ success: true, data: savedOffer });
   } catch (error) {
-    res.status(500).send({ success: false, message: 'Something went wrong' });
+    res.status(500).send({ success: false, message: error });
   }
 });
 

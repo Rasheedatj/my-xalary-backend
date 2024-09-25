@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
     const savedApplication = await application.save();
     res.send({ success: true, data: savedApplication });
   } catch (error) {
-    res.status(500).send({ success: false, message: 'Something went wrong' });
+    res.status(500).send({ success: false, message: error });
   }
 });
 
