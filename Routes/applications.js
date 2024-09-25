@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Applications = require('../models/application');
 
-// get all workouts
+// get all applications
 router.get('/', async (req, res) => {
   try {
     const applications = await Applications.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// add a workout
+// add a application
 router.post('/', async (req, res) => {
   const application = new Applications({
     title: req.body.title,
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// get workout by single id
+// get application by single id
 router.get('/:id', async (req, res) => {
   try {
     const application = await Applications.findById(req.params.id);
@@ -50,7 +50,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// update workout
+// update application
 router.put('/:id', async (req, res) => {
   try {
     const updatedApplication = await Applications.findByIdAndUpdate(
@@ -81,7 +81,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// delete workout
+// delete application
 router.delete('/:id', async (req, res) => {
   try {
     await Applications.findByIdAndDelete(req.params.id);

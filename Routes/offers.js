@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Offers = require('../models/Offer');
 
-// get all workouts
+// get all offers
 router.get('/', async (req, res) => {
   try {
     const offers = await Offers.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// add a workout
+// add a offer
 router.post('/', async (req, res) => {
   const offer = new Offers({
     title: req.body.title,
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// get workout by single id
+// get offer by single id
 router.get('/:id', async (req, res) => {
   try {
     const offer = await Offers.findById(req.params.id);
@@ -50,7 +50,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// update workout
+// update offer
 router.put('/:id', async (req, res) => {
   try {
     const updatedOffer = await Offers.findByIdAndUpdate(
@@ -83,7 +83,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// delete workout
+// delete offer
 router.delete('/:id', async (req, res) => {
   try {
     await Offers.findByIdAndDelete(req.params.id);
