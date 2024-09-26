@@ -25,7 +25,7 @@ const ApplicationSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Enter field'],
   },
-  Overview: {
+  overview: {
     type: String,
     required: [true, 'Enter  overview'],
   },
